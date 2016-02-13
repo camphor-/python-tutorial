@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>4-functions</title>
+<title>6-control-flow</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -176,29 +176,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="&#38306;&#25968;">&#38306;&#25968;<a class="anchor-link" href="#&#38306;&#25968;">&#182;</a></h1><p>Python での関数はまとまった処理に名前をつけておき, プログラム中で利用できるようにするものです.</p>
-<p>Python での関数は</p>
-<ul>
-<li>定義した個数の<strong>引数</strong>をとり</li>
-<li>なんらかの<strong>処理</strong>を行う</li>
-<li><strong>戻り値</strong>を返す</li>
-</ul>
-<p>ものです.</p>
-<p>これまで登場した関数の例:</p>
-<ul>
-<li><code>print</code><ul>
-<li>引数: 文字列や数値など</li>
-<li>処理: 引数の値を表示する</li>
-<li>戻り値: なし</li>
-</ul>
-</li>
-<li><code>input</code><ul>
-<li>引数: 表示するメッセージ</li>
-<li>処理: 入力を1行受け取る</li>
-<li>戻り値: 受け取った入力を文字列として返す</li>
-</ul>
-</li>
-</ul>
+<h1 id="&#21046;&#24481;&#27083;&#36896;">&#21046;&#24481;&#27083;&#36896;<a class="anchor-link" href="#&#21046;&#24481;&#27083;&#36896;">&#182;</a></h1><p>プログラムは入力された値に応じて, 様々な処理を行います. 制御構造を用いると, 条件分岐や反復処理などを実現できます.</p>
 
 </div>
 </div>
@@ -208,12 +186,14 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="&#38306;&#25968;&#23450;&#32681;">&#38306;&#25968;&#23450;&#32681;<a class="anchor-link" href="#&#38306;&#25968;&#23450;&#32681;">&#182;</a></h2><p>Python で関数は次のようにして定義します.</p>
+<h2 id="if-&#25991;">if &#25991;<a class="anchor-link" href="#if-&#25991;">&#182;</a></h2><p>if 文は条件分岐を実現します. if 文は次のように書きます.</p>
 
-<pre><code>def 関数名(引数名1, 引数名2, ...):
-    # 処理
-    return 戻り値</code></pre>
-<p>Python では関数の中身の部分はインデント (字下げ) が必要です. 一般的に <code>Tab</code> キーを用いて, 半角スペース4つを入力します.</p>
+<pre><code>if 条件1:
+    条件1が成立した時の処理
+elif 条件2:
+    条件1は成立しなかったが, 条件2が成立した時の処理
+else:
+    条件1も条件2も成立しなかった時の処理</code></pre>
 
 </div>
 </div>
@@ -223,34 +203,15 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="c1"># 例: x と y を加算する関数</span>
-<span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="&#38306;&#25968;&#36969;&#29992;">&#38306;&#25968;&#36969;&#29992;<a class="anchor-link" href="#&#38306;&#25968;&#36969;&#29992;">&#182;</a></h2><p>関数を利用するには <code>関数名(引数1, 引数2, ...)</code> のように記述します.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="c1"># 例:</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">add</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span class="n">x</span> <span class="o">=</span> <span class="mi">75</span>
+<span class="k">if</span> <span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">80</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;優&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">70</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;良&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">60</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;良&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;不可&quot;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -263,7 +224,104 @@ div#notebook {
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>5
+<pre>良
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="for-&#25991;">for &#25991;<a class="anchor-link" href="#for-&#25991;">&#182;</a></h2><p>for 文は反復処理を実現します. Python の for 文は次のように書きます.</p>
+
+<pre><code>for 変数名 in 反復するデータ:
+    処理</code></pre>
+<p>Python では C などのプログラミング言語と違い, リストや文字列のシーケンス型について反復処理を行えます.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">primes</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">13</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;素数の先頭6個&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">prime</span> <span class="ow">in</span> <span class="n">primes</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">prime</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>素数の先頭6個
+2
+3
+5
+7
+11
+13
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>range()</code> 関数を使うと, 簡単に数列を作ることができます.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>0
+1
+2
+3
+4
+5
+6
+7
+8
+9
 </pre>
 </div>
 </div>
@@ -278,8 +336,8 @@ div#notebook {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="&#32244;&#32722;">&#32244;&#32722;<a class="anchor-link" href="#&#32244;&#32722;">&#182;</a></h2><ul>
-<li>3つの数を引数としてとり, それらの積を返すような関数を作ってみましょう</li>
-<li>引数をとらず, 入力を1行受け取り, 受け取った入力を整数に変換して返す関数を作ってみましょう</li>
+<li>0から100 までの数のうち, 奇数だけを順に表示するプログラムを作ってみましょう</li>
+<li>0から100 までの数のうち, 素数だけを順に表示するプログラムを作ってみましょう</li>
 </ul>
 
 </div>
