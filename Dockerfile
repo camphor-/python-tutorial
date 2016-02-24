@@ -1,10 +1,28 @@
-FROM python:3.5.1
+FROM python:3.5.1-alpine
 MAINTAINER Yusuke Miyazaki <miyazaki.dev@gmail.com>
 
 COPY . /app/
 WORKDIR /app
 
-RUN pip install -r requirements.txt \
+RUN set -ex \
+        && apk add --no-cache --virtual .build-deps  \
+                bash \
+                gcc \
+                g++ \
+                libc-dev \
+                make \
+                ncurses-dev \
+                readline-dev \
+        && pip install -r requirements.txt \
+        && runDeps="$( \
+            scanelf --needed --nobanner --recursive /usr/local \
+                | awk '{ gsub(/,/, "\nso:", $2); print "so:" $2 }' \
+                | sort -u \
+                | xargs -r apk info --installed \
+                | sort -u \
+        )" \
+        && apk add --virtual .rundeps $runDeps \
+        && apk del .build-deps \
         && rm -rf /root/.cache
 
 EXPOSE 8888
