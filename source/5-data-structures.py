@@ -37,7 +37,7 @@ print(primes)
 # ## 辞書
 # 辞書はその名の通り辞書のようなもので, キーと値のペアの集合です. 辞書は波括弧を使って書きます.
 
-# In[8]:
+# In[4]:
 
 eiwa = {
     "apple": "りんご",
@@ -49,21 +49,21 @@ print(eiwa)
 
 # `eiwa[key]` のようにして, `eiwa` のキーが `key` である値を取得できます.
 
-# In[9]:
+# In[5]:
 
 print(eiwa["dog"])
 
 
 # 存在しないキーの値を取得しようとするとエラーになります
 
-# In[14]:
+# In[6]:
 
 eiwa["cat"]
 
 
 # 辞書にあるキーが存在するかどうかは**`in`**演算子でチェックできます. 存在する場合は `True` (真), 存在しない場合は `False` (偽) という真偽値が返ります.
 
-# In[15]:
+# In[7]:
 
 print("dog" in eiwa)
 print("cat" in eiwa)
@@ -71,7 +71,7 @@ print("cat" in eiwa)
 
 # `eiwa[key]` に値を代入することで, `eiwa` のキーが `key` である値を変更出来ます.
 
-# In[10]:
+# In[8]:
 
 print(eiwa["dog"])
 eiwa["dog"] = "犬"
@@ -80,7 +80,7 @@ print(eiwa["dog"])
 
 # `eiwa.keys()` でキーのリスト, `eiwa.values()` で値のリスト, `eiwa.items()` でキーと値のペア (タプル) のリストを取得できます.
 
-# In[13]:
+# In[9]:
 
 print(eiwa.keys())
 print(eiwa.values())
