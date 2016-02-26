@@ -25,5 +25,8 @@ RUN set -ex \
         && apk del .build-deps \
         && rm -rf /root/.cache
 
+RUN mkdir -p -m 700 /root/.jupyter/ && \
+        echo "c.NotebookApp.ip = '*'" >> /root/.jupyter/jupyter_notebook_config.py
+
 EXPOSE 8888
 CMD ["jupyter", "notebook"]
