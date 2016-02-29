@@ -30,5 +30,4 @@
 # - [@ymyzk](https://github.com/ymyzk)
 # 
 # ### レビュー
-# - [@tanishiking](https://github.com/tanishiking)
-# - [@yu-i9](https://github.com/yu-i9)
+# - [CAMPHOR- コアメンバー](https://camph.net/members)
