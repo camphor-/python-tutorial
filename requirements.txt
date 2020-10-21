@@ -4,40 +4,37 @@
 #
 #    pip-compile requirements.in
 #
-appnope==0.1.0            # via ipython
 click==6.2                # via pip-tools
-decorator==4.0.9          # via ipython, traitlets
+decorator==4.0.9          # via ipython
 first==2.0.1              # via pip-tools
-gnureadline==6.3.3        # via ipython
 ipykernel==4.2.2          # via ipywidgets, jupyter, jupyter-console, notebook, qtconsole
 ipython-genutils==0.1.0   # via nbformat, notebook, traitlets
 ipython==4.1.1            # via ipykernel, ipywidgets, jupyter-console
 ipywidgets==4.1.1         # via jupyter
 jinja2==2.8               # via nbconvert, notebook
 jsonschema==2.5.1         # via nbformat
-jupyter-client==4.1.1     # via ipykernel, jupyter-console, notebook, qtconsole
+jupyter-client==6.1.7     # via ipykernel, jupyter-console, notebook, qtconsole
 jupyter-console==4.1.0    # via jupyter
-jupyter-core==4.0.6       # via jupyter-client, nbconvert, nbformat, notebook, qtconsole
-jupyter==1.0.0
-MarkupSafe==0.23          # via jinja2
+jupyter-core==4.6.3       # via jupyter-client, nbconvert, nbformat, notebook, qtconsole
+jupyter==1.0.0            # via -r requirements.in
+markupsafe==0.23          # via jinja2
 mistune==0.7.1            # via nbconvert
 nbconvert==4.1.0          # via jupyter, notebook
 nbformat==4.0.1           # via nbconvert, notebook
-notebook==4.1.0           # via ipywidgets, jupyter
+notebook==5.7.8           # via ipywidgets, jupyter
 path.py==8.1.2            # via pickleshare
 pexpect==4.0.1            # via ipython
 pickleshare==0.6          # via ipython
-pip-tools==1.6
+pip-tools==1.6            # via -r requirements.in
+prometheus-client==0.8.0  # via notebook
 ptyprocess==0.5.1         # via pexpect, terminado
 pygments==2.1             # via nbconvert, qtconsole
-pyzmq==15.2.0             # via jupyter-client
+python-dateutil==2.8.1    # via jupyter-client
+pyzmq==19.0.2             # via jupyter-client, notebook
 qtconsole==4.1.1          # via jupyter
+send2trash==1.5.0         # via notebook
 simplegeneric==0.8.1      # via ipython
-six==1.10.0               # via pip-tools
-terminado==0.6            # via notebook
-tornado==4.3              # via notebook, terminado
-traitlets==4.1.0          # via ipykernel, ipython, ipywidgets, jupyter-client, jupyter-core, nbconvert, nbformat, notebook, qtconsole
-
-# The following packages are commented out because they are
-# considered to be unsafe in a requirements file:
-# setuptools                # via ipython
+six==1.10.0               # via pip-tools, python-dateutil
+terminado==0.9.1          # via notebook
+tornado==4.3              # via jupyter-client, notebook, terminado
+traitlets==5.0.5          # via ipykernel, ipython, ipywidgets, jupyter-client, jupyter-core, nbconvert, nbformat, notebook, qtconsole
